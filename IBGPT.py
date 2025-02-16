@@ -3,11 +3,6 @@ import openai
 import streamlit as st
 import time
 from openai import OpenAI
-from dotenv import load_dotenv
-
-# 환경 변수 로드
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
 
 # Assistant ID (Playground에서 사용한 Assistant ID 확인 필요)
 assistant_id = "asst_RnCrKj7G4US5N9EkRwx6UiFC"
