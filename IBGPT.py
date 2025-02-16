@@ -7,9 +7,6 @@ from openai import OpenAI
 # Assistant ID (Playground에서 사용한 Assistant ID 확인 필요)
 assistant_id = "asst_RnCrKj7G4US5N9EkRwx6UiFC"
 
-# OpenAI 클라이언트 설정
-client = OpenAI(api_key=api_key)
-
 # Streamlit UI 설정
 st.set_page_config(page_title="IB GPT Chatbot", page_icon="🎓")
 
