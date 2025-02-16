@@ -73,7 +73,7 @@ if not api_key:
 
     # ✅ 메인 화면 안내 메시지 수정
     st.markdown("""
-    ## 🎓 IB GPT 챗봇 0.1.0-beta (개발 버전)
+    ## 🎓 IB GPT 챗봇 0.1.1-alpha (개발 버전)
     안녕하세요! 👋 **IB GPT 챗봇**은 IB Diploma Programme(DP) 학생들을 위한 **맞춤형 학습 도우미 AI**입니다.
 
     ### 💡 **이 챗봇이 도와줄 수 있는 것:**
