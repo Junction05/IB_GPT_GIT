@@ -66,30 +66,30 @@ def run_assistant(user_input):
     return assistant_reply
 
 # Streamlit UI
-st.title("🎓 IB GPT Chatbot")
+st.title("IB GPT Chatbot")
+
+# ✅ API 입력 여부와 관계없이 UI 설명 유지
+st.markdown("""
+## IB GPT 챗봇 0.1.2-alpha (개발 버전)
+안녕하세요! 👋 **IB GPT 챗봇**은 IB Diploma Programme(DP) 학생들을 위한 **맞춤형 학습 도우미 AI**입니다.
+
+### 💡 **이 챗봇이 도와줄 수 있는 것:**
+✅ **과목별 개념 설명** – Biology, Chemistry, Math 등 다양한 IB 과목 지원  
+✅ **IA & EE 가이드** – 주제 선정부터 작성 팁까지 맞춤형 조언 제공  
+✅ **시험 대비 & 학습 전략** – IB 평가 기준에 맞춘 효과적인 학습법 제안  
+✅ **TOK 및 논리적 사고 지원** – TOK Essay 및 Presentation 준비 도움  
+
+### 🔑 **사용 방법:**
+1️⃣ **사이드바에 OpenAI API 키를 입력하세요.**  
+2️⃣ **help(임시 명령어)를 입력해서 도움받을 과목을 확인하세요.**  
+3️⃣ **필요하면 새로운 대화를 시작할 수 있습니다.**  
+
+🚀 **IB 학습을 더 쉽고 효율적으로!**  
+지금 바로 질문을 입력하고 챗봇을 활용해 보세요! 😊  
+""")
 
 if not api_key:
-    # 🔴 API 키 입력 전 화면 수정
     st.warning("⚠️ 계속하려면 사이드바에 OpenAI API 키를 입력해주세요.")
-
-    st.markdown("""
-    ## 🎓 IB GPT 챗봇 0.1.2-alpha (개발 버전)
-    안녕하세요! 👋 **IB GPT 챗봇**은 IB Diploma Programme(DP) 학생들을 위한 **맞춤형 학습 도우미 AI**입니다.
-
-    ### 💡 **이 챗봇이 도와줄 수 있는 것:**
-    ✅ **과목별 개념 설명** – Biology, Chemistry, Math 등 다양한 IB 과목 지원  
-    ✅ **IA & EE 가이드** – 주제 선정부터 작성 팁까지 맞춤형 조언 제공  
-    ✅ **시험 대비 & 학습 전략** – IB 평가 기준에 맞춘 효과적인 학습법 제안  
-    ✅ **TOK 및 논리적 사고 지원** – TOK Essay 및 Presentation 준비 도움  
-
-    ### 🔑 **사용 방법:**
-    1️⃣ **사이드바에 OpenAI API 키를 입력하세요.**  
-    2️⃣ **help(임시 명령어)를 입력해서 도움받을 과목을 확인하세요.**  
-    3️⃣ **필요하면 새로운 대화를 시작할 수 있습니다.**  
-
-    🚀 **IB 학습을 더 쉽고 효율적으로!**  
-    지금 바로 질문을 입력하고 챗봇을 활용해 보세요! 😊  
-    """)
     st.stop()  # ✅ API 키가 없으면 이후 코드 실행 방지
 
 else:
