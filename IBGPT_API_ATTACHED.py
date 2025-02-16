@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import os
 from openai import OpenAI
-from detenv import load_dotenv
+from dotenv import load_dotenv
 import time
 
 # ✅ 환경 변수 로드 및 API 키 설정
