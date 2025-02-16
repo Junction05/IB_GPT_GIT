@@ -110,7 +110,8 @@ for message in st.session_state.messages:
 if st.button("🗑 새로운 대화 시작"):
     st.session_state.messages = []
     st.session_state.thread_id = None
-    st.experimental_rerun()
+    st.rerun()  # ✅ 최신 Streamlit 버전에서 사용 가능
+
 
 # 버전 정보 저장을 위한 세션 상태 초기화
 if "version" not in st.session_state:
