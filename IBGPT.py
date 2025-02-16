@@ -73,14 +73,8 @@ if not api_key:
 else:
     st.write("IB 과목 학습을 돕는 AI 챗봇입니다. Playground의 Instructions를 반영합니다.")
 
-# 사용자 입력 받기
-user_input = st.chat_input("💬 질문을 입력하세요:", key="user_input_1")
-
-# ✅ 사용자 입력 필드를 한 번만 선언
-if "user_input" not in st.session_state:
-    user_input = st.chat_input("💬 질문을 입력하세요:", key="chat_input")
-else:
-    user_input = None  # 입력 중복 방지
+# ✅ 사용자 입력 필드를 한 번만 선언 (중복 제거됨)
+user_input = st.chat_input("💬 질문을 입력하세요:", key="chat_input")
 
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
@@ -108,9 +102,6 @@ if "version" not in st.session_state:
 
 if "version_info" not in st.session_state:
     st.session_state.version_info = None  # 버전 수정 내역
-
-# 사용자 입력 받기
-user_input = st.chat_input("💬 질문을 입력하세요:")
 
 if user_input:
     # 버전 관리 명령어 처리
