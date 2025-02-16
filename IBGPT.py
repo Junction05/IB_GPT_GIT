@@ -3,6 +3,17 @@ import openai
 import streamlit as st
 import time
 from openai import OpenAI
+from dotenv import load_dotenv # ✅ 환경 변수 로드 모듈 추가
+
+# ✅ 환경 변수 로드
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")  # ✅ 환경 변수에서 API 키 가져오기
+
+# OpenAI 클라이언트 설정
+if not api_key:
+    st.error("❌ OpenAI API 키가 설정되지 않았습니다! `.env` 파일을 확인하세요.")
+else:
+    client = OpenAI(api_key=api_key)
 
 # Assistant ID (Playground에서 사용한 Assistant ID 확인 필요)
 assistant_id = "asst_RnCrKj7G4US5N9EkRwx6UiFC"
