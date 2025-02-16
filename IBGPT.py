@@ -76,6 +76,12 @@ else:
 # 사용자 입력 받기
 user_input = st.chat_input("💬 질문을 입력하세요:", key="user_input_1")
 
+# ✅ 사용자 입력 필드를 한 번만 선언
+if "user_input" not in st.session_state:
+    user_input = st.chat_input("💬 질문을 입력하세요:", key="chat_input")
+else:
+    user_input = None  # 입력 중복 방지
+
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
 
