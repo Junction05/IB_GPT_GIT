@@ -66,6 +66,29 @@ def run_assistant(user_input):
 st.title("🎓 IB GPT Chatbot")
 st.write("IB 과목 학습을 돕는 AI 챗봇입니다. Playground의 Instructions를 반영합니다.")
 
+else:
+    st.warning("⚠️ 계속하려면 사이드바에 OpenAI API 키를 입력해주세요.")
+    
+    st.write("""
+### 🎓 IB GPT 챗봇 0.1.1-beta (개발 버전)  
+             
+안녕하세요! 👋 **IB GPT 챗봇**은 IB Diploma Programme(DP) 학생들을 위한 **맞춤형 학습 도우미 AI**입니다.  
+
+💡 **이 챗봇이 도와줄 수 있는 것:**  
+✅ **과목별 개념 설명** – Biology, Chemistry, Math 등 다양한 IB 과목 지원  
+✅ **IA & EE 가이드** – 주제 선정부터 작성 팁까지 맞춤형 조언 제공  
+✅ **시험 대비 & 학습 전략** – IB 평가 기준에 맞춘 효과적인 학습법 제안  
+✅ **TOK 및 논리적 사고 지원** – TOK Essay 및 Presentation 준비 도움  
+
+🔑 **사용 방법:**  
+1️⃣ **사이드바에 OpenAI API 키를 입력하세요.**  
+2️⃣ **궁금한 점을 질문하면 AI가 답변해드립니다!**  
+3️⃣ **필요하면 새로운 대화를 시작할 수 있습니다.**  
+
+📌 **IB 학습을 더 쉽고 효율적으로!** 🚀  
+지금 바로 질문을 입력하고 챗봇을 활용해 보세요! 😊
+""")
+
 # 사용자 입력 받기
 user_input = st.chat_input("💬 질문을 입력하세요:")
 
