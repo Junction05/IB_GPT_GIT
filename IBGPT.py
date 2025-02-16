@@ -74,7 +74,7 @@ else:
     st.write("IB 과목 학습을 돕는 AI 챗봇입니다. Playground의 Instructions를 반영합니다.")
 
 # 사용자 입력 받기
-user_input = st.chat_input("💬 질문을 입력하세요:")
+user_input = st.chat_input("💬 질문을 입력하세요:", key="user_input_1")
 
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
