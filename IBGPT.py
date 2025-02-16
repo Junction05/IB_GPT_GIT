@@ -63,8 +63,10 @@ def run_assistant(user_input):
     return assistant_reply
 
 # Streamlit UI
-st.title("🎓 IB GPT Chatbot")
-st.write("IB 과목 학습을 돕는 AI 챗봇입니다. Playground의 Instructions를 반영합니다.")
+if api_key:
+    # ✅ API 키가 입력된 경우, 정상적인 챗봇 실행
+    st.title("🎓 IB GPT Chatbot")
+    st.write("IB 과목 학습을 돕는 AI 챗봇입니다. Playground의 Instructions를 반영합니다.")
 
 else:
     st.warning("⚠️ 계속하려면 사이드바에 OpenAI API 키를 입력해주세요.")
