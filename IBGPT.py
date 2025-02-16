@@ -111,3 +111,56 @@ if st.button("🗑 새로운 대화 시작"):
     st.session_state.messages = []
     st.session_state.thread_id = None
     st.experimental_rerun()
+
+# 버전 정보 저장을 위한 세션 상태 초기화
+if "version" not in st.session_state:
+    st.session_state.version = None  # 버전 번호
+
+if "version_info" not in st.session_state:
+    st.session_state.version_info = None  # 버전 수정 내역
+
+# 사용자 입력 받기
+user_input = st.chat_input("💬 질문을 입력하세요:")
+
+if user_input:
+    # 버전 관리 명령어 처리
+    if user_input.startswith("/버전 입력"):
+        try:
+            version_number = user_input.split('("')[1].split('")')[0]
+            st.session_state.version = version_number
+            response = f"✅ 버전 `{version_number}` 기록 완료!"
+        except IndexError:
+            response = "❌ 올바른 형식으로 입력해주세요: `/버전 입력 (\"버전번호\")`"
+
+    elif user_input == "/버전 확인":
+        if st.session_state.version:
+            response = f"📌 현재 버전: `{st.session_state.version}`"
+        else:
+            response = "❌ 기록된 버전이 없습니다."
+
+    elif user_input.startswith("/버전 정보 입력"):
+        try:
+            version_info = user_input.split('("')[1].split('")')[0]
+            st.session_state.version_info = version_info
+            response = "✅ 버전 정보 기록 완료!"
+        except IndexError:
+            response = "❌ 올바른 형식으로 입력해주세요: `/버전 정보 입력 (\"버전 수정 내역\")`"
+
+    elif user_input == "/버전 정보":
+        if st.session_state.version_info:
+            response = f"📜 버전 수정 내역:\n{st.session_state.version_info}"
+        else:
+            response = "❌ 기록된 버전 수정 내역이 없습니다."
+
+    else:
+        # 기본 Assistant 응답 처리
+        st.session_state.messages.append({"role": "user", "content": user_input})
+        response = run_assistant(user_input)
+
+    # 응답 저장 및 출력
+    st.session_state.messages.append({"role": "assistant", "content": response})
+
+# 채팅 기록 표시
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.write(message["content"])
