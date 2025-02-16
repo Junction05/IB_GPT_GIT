@@ -73,7 +73,7 @@ if not api_key:
     st.warning("⚠️ 계속하려면 사이드바에 OpenAI API 키를 입력해주세요.")
 
     st.markdown("""
-    ## 🎓 IB GPT 챗봇 0.1.1-alpha (개발 버전)
+    ## 🎓 IB GPT 챗봇 0.1.2-alpha (개발 버전)
     안녕하세요! 👋 **IB GPT 챗봇**은 IB Diploma Programme(DP) 학생들을 위한 **맞춤형 학습 도우미 AI**입니다.
 
     ### 💡 **이 챗봇이 도와줄 수 있는 것:**
